@@ -1,14 +1,16 @@
 // #1 Take an array of numbers and make them strings
 function stringItUp(arr) {
-	// your code here
-}
+    return arr.map(String); 
+ }
 
 console.log(stringItUp([2, 5, 100]));
 // output: ["2", "5", "100"]
 
 // #2 Make an array of strings of the names
 function namesOnly(arr) {
-	// your code here
+	return arr.map(function (value) {
+        return value.name;
+    })
 }
 
 console.log(
@@ -39,7 +41,11 @@ console.log(
 
 // #3 Filter the output array from #2.
 function oldOnesOnly(arr) {
-	// your code here
+	return arr.filter(function (value) {
+        return value.age >= 80;
+    }).map(function (value) {
+        return value.age;
+    });
 }
 console.log(
 	oldOnesOnly([
