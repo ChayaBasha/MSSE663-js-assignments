@@ -13,7 +13,7 @@ var ExpertWitness = /** @class */ (function () {
         return this.credentials;
     };
     ExpertWitness.prototype.canTestify = function () {
-        return (this.credentials.length >= 2);
+        return this.credentials.length >= 2;
     };
     return ExpertWitness;
 }());
