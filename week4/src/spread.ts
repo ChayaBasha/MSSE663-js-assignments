@@ -6,14 +6,20 @@ console.log(originalNumbers);
 
 // refactor here
 
+export const originalNumbers2 =[...numbers];  //using spread operator to copy the array 
+console.log(originalNumbers2); 
+
+
 // #2 Combining arrays
 export const winners = ['first'];
 export const runnerUps = ['second', 'third', 'fourth', 'fifth'];
 
-export const originalContenders = runnerUps.unshift(winners[0]);
+export const originalContenders = winners.concat(runnerUps); //fixed code to make it output expected out put
 console.log(originalContenders);
 
-// refactor here
+//refactor here
+export const originalContenders2 = [winners[0], ...runnerUps]; //using spread paramter to add to the array 
+console.log(originalContenders2);
 
 // #3 Combining objects
 export const bob = {
@@ -24,9 +30,14 @@ export const kyle = {
   boy: 'Kyle'
 };
 
-export const originalPersons = Object.assign(bob, kyle);
+export const originalPersons = (<any>Object).assign(bob, kyle); //couldn't get it to compile "Property 'assign' does not exist on type 'ObjectConstructor'"
+
+console.log(originalPersons);
 
 // refactor here
+export const originalPersons2 = {...bob,...kyle};
+console.log(originalPersons2); 
+
 
 // #4 Modifying values in arrays of objects
 export const data = [
@@ -51,9 +62,15 @@ export const update = {
 
 export const originalUpdates = data.map(task => {
   if (task.id === update.id) {
-    return Object.assign(task, update);
+    return (<any>Object).assign(task, update);
   }
   return task;
 });
+console.log(originalUpdates);   //I added this to check what outputs in the original version
 
 // refactor here
+export const originalUpdates2 = data.map(a => {return {...a}})
+
+originalUpdates2.find(a => a.id == update.id).task = 'Do the other thing...again';
+
+console.log(originalUpdates2);
