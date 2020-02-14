@@ -2,7 +2,7 @@
 
 
 //I created a type called ExpertCredentials that requires two objects for the expert's education and experience
-type ExpertCredentials = {
+export type ExpertCredentials = {
     education: {
         institutionName: string,
         degreeEarned: string,
@@ -14,26 +14,24 @@ type ExpertCredentials = {
 
 }
 //I create an interface called Expert with 3 properties and 2 methods as specified
-interface Expert{
+export interface Expert{
     name: string;
     expertise: string;
-    credentials: Array <ExpertCredentials>;
+    credentials: Array<ExpertCredentials>;
 
-    getExpertCredentials: () => Array <ExpertCredentials>;
+    getExpertCredentials: () => Array<ExpertCredentials>;
     canTestify: () => boolean;
 
 }
 //I created a class called ExpertWitness that uses the interface Expert
-class ExpertWitness implements Expert {
+export class ExpertWitness {
     constructor(
         public name: string,
         public expertise: string,
-        public credentials: Array <ExpertCredentials>,
+        public credentials: Array<ExpertCredentials>,
     
     ) {
-        this.name = name;
-        this.expertise = expertise;
-        this.credentials = credentials;
+        
     }
 
     getExpertCredentials(): Array<ExpertCredentials> {
@@ -55,7 +53,7 @@ let TomCredentials1:ExpertCredentials = {
     }
 }
 //I created a new instance of ExpertWitness called Tom
-let Tom = new ExpertWitness ("Thomas Blanchet", "Mathematics",[TomCredentials1])
+let Tom = new ExpertWitness("Thomas Blanchet", "Mathematics",[TomCredentials1])
 console.log(Tom.getExpertCredentials());
 //Tom cannot testify becuase he only has one set of Credentnials
 console.log(Tom.canTestify());
