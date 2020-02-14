@@ -24,7 +24,7 @@ export interface Expert{
 
 }
 //I created a class called ExpertWitness that uses the interface Expert
-export class ExpertWitness {
+export class ExpertWitness implements Expert {
     constructor(
         public name: string,
         public expertise: string,
@@ -43,7 +43,7 @@ export class ExpertWitness {
     }
 }
 //I created a variable for Tom's Credentials to make the inputted data a little easier to read 
-let TomCredentials1:ExpertCredentials = {
+export let TomCredentials1:ExpertCredentials = {
     education: {
         institutionName: "University Of Colorado",
         degreeEarned: "BA"},

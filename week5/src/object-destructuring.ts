@@ -2,7 +2,7 @@
 export const object = { name: 'elvis', title: 'hip swinger' };
 
 // deconstruct here
-
+var {name: person, title:job}= object;
 console.log(person); // 'elvis'
 console.log(job); // 'hip swinger'
 
@@ -17,7 +17,7 @@ export const nestedObject = {
 };
 
 // deconstruct here
-
+var {user, address, id} = nestedObject;
 console.log(user); // 'elvis'
 console.log(address); // { city: 'denver', state: 'colorado' }
 console.log(id); // 1
