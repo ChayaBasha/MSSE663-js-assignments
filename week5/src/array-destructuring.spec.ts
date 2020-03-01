@@ -1,11 +1,12 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import {fruits, array1, food, food2, statement} from './array-destructuring';
+import {a,b, food2, statement} from './array-destructuring';
 
 describe('Array destructuring tests', () => {
   it('#1 should have a variable for every element in the given array', () => {
-    expect(array1).to.eql([fruits[1], fruits[0]])
+    expect(b).to.eql('apple');
+    expect(a).to.equal('banana');
   });
     
   it('#2 should have a variable for the first 2 elements then spread the rest', () => {
