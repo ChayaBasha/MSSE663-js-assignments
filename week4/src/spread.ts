@@ -6,7 +6,7 @@ console.log(originalNumbers);
 
 // refactor here
 
-export const originalNumbers2 = [...numbers];
+export const originalNumbers2 = [...numbers]; //this is me using the spread operator to copy the array
 console.log(originalNumbers2);
 
 //#2 Combining arrays
@@ -17,7 +17,7 @@ export const originalContenders = winners.concat(runnerUps); //I changed this to
 console.log(originalContenders);
 
 // refactor here
-export const originalContenders2 = [...winners, ...runnerUps];
+export const originalContenders2 = [...winners, ...runnerUps];//ths is also me using the spread operator 
 
 // #3 Combining objects
 export const bob = {
@@ -63,6 +63,10 @@ export const originalUpdates = data.map(task => {
 });
 
 // refactor here
- export const originalUpdates2 = data.map(a => {return {...a}});
- originalUpdates2.find(a => a.id === update.id).task = 'Do the other thing... again';
- console.log(originalUpdates2);
+
+export const originalUpdates2 = data.map(task => {
+  if (task.id === update.id) {
+    return {...update};
+  }
+  return task;
+});

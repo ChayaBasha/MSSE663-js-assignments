@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import {originalNumbers2, numbers} from'./spread';
+import {originalNumbers2, numbers, update} from'./spread';
 
 describe('test for #1', () => {
     it('should copy the numbers array', () => {
@@ -36,7 +36,7 @@ import{originalUpdates2} from './spread';
 
 describe('test for #4', () => {
     it('should change the second task', () => {
-        expect(originalUpdates2[1]).to.eql({id: 1, task: 'Do the other thing... again'})
+        expect(originalUpdates2[1]).to.eql(update);
     }
 
     )
