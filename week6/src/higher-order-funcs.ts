@@ -10,10 +10,18 @@
  */
 const things = ['thing1', 'thing2'];
 
+
+const makeObject = (value:string, index: number) => ({id:index, name:value}); 
+const thingsAsObjects = things.map(makeObject);
+
 /**
  * #2 Higher order then curry.
  *
  * - Write a function that accepts a key as a string.
+
+ * 
  * - Filter the results from 1 to return a single thing object.
+ * 
+ * 
  * - Hoist that filter callback and curry all functions.
  */
